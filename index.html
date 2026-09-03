@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
+
+    <!-- 🌐 Special Link Preview Tags (Open Graph) -->
+    <meta property="og:title" content="My Professional Portfolio">
+    <meta property="og:description" content="Click to view or download my complete multi-page work portfolio.">
+    <meta property="og:image" content="https://github.io">
+    <meta property="og:url" content="https://github.io">
+    <meta property="og:type" content="website">
+
+    <!-- 🐦 Twitter Preview Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="My Professional Portfolio">
+    <meta name="twitter:description" content="Click to view or download my complete multi-page work portfolio.">
+    <meta name="twitter:image" content="https://github.io">
+
     <style>
         /* Base setup for everyone */
         body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background-color: #f6f8fa; }
@@ -19,7 +33,7 @@
         .btn-secondary { background: #0366d6; color: white; }
         .btn-secondary:hover { background: #0056b3; }
 
-        /* 💻 DESKTOP VIEW: Hidden by default on mobile phones */
+        /* 💻 DESKTOP VIEW */
         .desktop-view { display: none; flex-direction: column; height: 100vh; }
         .header { background: #24292e; color: white; padding: 12px 24px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 10; }
         .title { font-size: 18px; font-weight: bold; }
@@ -27,7 +41,7 @@
         .desktop-btn:hover { background: #22863a; }
         iframe { width: 100%; flex-grow: 1; border: none; }
 
-        /* 🖥️ IF SCREEN IS BIG (DESKTOP): Switch layouts automatically */
+        /* 🖥️ IF SCREEN IS BIG (DESKTOP) */
         @media (min-width: 768px) {
             .mobile-view { display: none; }
             .desktop-view { display: flex; }
@@ -57,4 +71,3 @@
 
 </body>
 </html>
-
