@@ -5,19 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <style>
-        body { margin: 0; padding: 0; font-family: Arial, sans-serif; display: flex; flex-direction: column; height: 100vh; }
-        .header { background: #24292e; color: white; padding: 12px 24px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        /* Base setup for everyone */
+        body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background-color: #f6f8fa; }
+        
+        /* 📱 MOBILE VIEW: Hide the embed frame, show friendly landing card */
+        .mobile-view { display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; text-align: center; box-sizing: border-box; padding: 20px; }
+        .card { background: white; padding: 40px 24px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-width: 400px; width: 100%; }
+        h1 { font-size: 24px; color: #24292e; margin-bottom: 8px; }
+        p { font-size: 16px; color: #586069; margin-bottom: 24px; line-height: 1.5; }
+        .btn { display: block; text-decoration: none; padding: 14px; border-radius: 6px; font-weight: bold; font-size: 16px; margin-bottom: 12px; transition: background 0.2s; }
+        .btn-primary { background: #2ea44f; color: white; }
+        .btn-primary:hover { background: #22863a; }
+        .btn-secondary { background: #0366d6; color: white; }
+        .btn-secondary:hover { background: #0056b3; }
+
+        /* 💻 DESKTOP VIEW: Hidden by default on mobile phones */
+        .desktop-view { display: none; flex-direction: column; height: 100vh; }
+        .header { background: #24292e; color: white; padding: 12px 24px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 10; }
         .title { font-size: 18px; font-weight: bold; }
-        .btn { background: #2ea44f; color: white; text-decoration: none; padding: 8px 16px; border-radius: 6px; font-weight: bold; font-size: 14px; transition: background 0.2s; }
-        .btn:hover { background: #22863a; }
+        .desktop-btn { background: #2ea44f; color: white; text-decoration: none; padding: 8px 16px; border-radius: 6px; font-weight: bold; font-size: 14px; }
+        .desktop-btn:hover { background: #22863a; }
         iframe { width: 100%; flex-grow: 1; border: none; }
+
+        /* 🖥️ IF SCREEN IS BIG (DESKTOP): Switch layouts automatically */
+        @media (min-width: 768px) {
+            .mobile-view { display: none; }
+            .desktop-view { display: flex; }
+        }
     </style>
 </head>
 <body>
-    <div class="header">
-        <div class="title">My Portfolio</div>
-        <a href="portfolio.pdf" download class="btn">📥 Download PDF</a>
+
+    <!-- 📱 What phone users will see -->
+    <div class="mobile-view">
+        <div class="card">
+            <h1>💼 Welcome to My Portfolio</h1>
+            <p>Tap below to view or download my complete multi-page portfolio directly on your phone.</p>
+            <a href="portfolio.pdf" class="btn btn-primary">📖 Open Portfolio (All Pages)</a>
+            <a href="portfolio.pdf" download class="btn btn-secondary">📥 Download PDF</a>
+        </div>
     </div>
-    <iframe src="portfolio.pdf"></iframe>
+
+    <!-- 💻 What computer users will see -->
+    <div class="desktop-view">
+        <div class="header">
+            <div class="title">My Portfolio Workspace</div>
+            <a href="portfolio.pdf" download class="desktop-btn">📥 Download PDF Version</a>
+        </div>
+        <iframe src="portfolio.pdf"></iframe>
+    </div>
+
 </body>
 </html>
+
